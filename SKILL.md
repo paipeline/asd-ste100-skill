@@ -1,65 +1,50 @@
 ---
 name: asd-ste100
-description: "Write or revise technical explanations, instructions, status reports, and agent handoffs in clear English inspired by ASD-STE100. Use when the user requests STE, Simplified Technical English, or less ambiguous technical communication."
+description: "Write explanations, instructions, and agent handoffs about 80% of the way to ASD-STE100 Simplified Technical English. Use when the user requests STE, 80% ASD-STE100, or clearer technical communication."
 ---
 
-# ASD-STE100: clear agent communication
+# Write in 80% ASD-STE100
 
-Write English that a human or another agent can understand on the first read.
-Use a practical adaptation of Simplified Technical English for agent output.
-Preserve meaning before you shorten text.
+Write about 80% of the way to ASD-STE100 Simplified Technical English.
+Use the STE writing method below for explanations, instructions, and communication between agents.
 
-## Preserve the task
+## Use the STE writing method
 
-Follow the user's requested language, tone, detail, and output format.
-Apply this skill to English prose. Keep code, commands, identifiers, paths, URLs, and verbatim quotes unchanged.
-In structured output, preserve the schema and exact values. Simplify only prose fields whose wording can change.
+1. **Control the words.** Choose common words with clear meanings. Give each technical concept one name and use it consistently.
+   Keep each word's meaning and grammatical role consistent. Explain unfamiliar technical terms when needed.
+2. **Control the noun groups.** Keep ordinary noun groups to three words or fewer.
+   Divide longer groups with prepositions. Keep official technical names intact and define a shorter name when useful.
+3. **Control the verbs.** Use active voice and direct verbs. Write instructions as commands.
+   Prefer simple present, past, or future forms when accurate. In descriptions, use passive voice only when the actor is unknown.
+4. **Control the sentences.** Limit procedural sentences to 20 words and descriptive sentences to 25 words.
+   Keep complete grammar and articles. Write contractions in full. Use lists to divide complex information.
+5. **Separate the actions.** Put one instruction in each sentence. Put a required condition before its action.
+   Use numbered steps for a sequence. Put instructions in the steps and supporting information in notes.
+6. **Build the explanation gradually.** Give each paragraph one topic and no more than six sentences.
+   Connect related sentences with clear words such as "because," "if," and "then."
+7. **Make warnings direct.** Start a necessary warning with the command or condition. Then explain the risk or consequence.
 
-Keep every material fact, condition, exception, negation, quantity, and uncertainty from the source.
-Keep the difference between a requirement, a recommendation, a possibility, and an observed result.
-If missing information changes the meaning or required action, ask a focused question. Otherwise, state any necessary assumption.
+## Apply the 80% balance
 
-## Write clearly
+Keep the STE structure. Allow ordinary technical vocabulary and natural grammar when strict dictionary or verb restrictions would distort the meaning.
+The 80% target describes this balance. It is not a measured compliance score.
 
-1. **Lead with the useful point.** Give the answer, result, or required action first. Add the reason and evidence as needed.
-2. **Use short, complete sentences.** Aim for at most 20 words per instruction and 25 words per descriptive sentence.
-   Split long sentences at a logical boundary. Retain words needed for correct meaning and grammar.
-3. **Give each sentence one job.** Put one action in each numbered step. Keep each paragraph on one topic.
-4. **Name the actor and the object.** Prefer active voice when the actor is known. Replace unclear pronouns with specific names.
-   If the actor is unknown, preserve that uncertainty.
-5. **Use one term for one concept.** Keep that term throughout the response. Define unfamiliar technical terms when needed.
-   Preserve exact domain terms instead of replacing them with inaccurate common words.
-6. **Use plain words and direct verbs.** Prefer "use" to "utilize" and "start" to "commence."
-   Keep articles and natural grammar. Choose simple verb forms when they preserve time and state.
-7. **Make conditions explicit.** Put a prerequisite before its action: "If the check fails, stop the release."
-   Retain exact limits, units, dates, and time zones when supplied. Mark missing values as unknown instead of inventing them.
-8. **Report status precisely.** Separate planned work, completed work, and verified results.
-   Use "not run" when a check has not run. Give an observable success condition when an instruction needs one.
+Preserve technical facts, uncertainty, conditions, exceptions, negation, quantities, and units.
+Keep requirements, recommendations, and possibilities distinct.
+Keep code, commands, identifiers, paths, URLs, and quotations exact.
+Preserve required schemas. Simplify only prose fields whose wording can change.
+Respect the user's requested language, format, and level of detail.
 
-## Hand off work
+For agent handoffs, state the completed work, evidence, remaining work, and next action.
+Use the workflow's existing message format. Distinguish observations from assumptions and planned actions.
 
-For an agent handoff, include only the fields the recipient needs:
+## Check the result
 
-```text
-Task: <specific goal and scope>
-Status: <current state, including unfinished work>
-Result: <observed outcome or artifact>
-Evidence: <checks, results, and relevant references>
-Next: <responsible actor, next action, and completion condition>
-```
+Compare the output with the source. Restore any missing fact or qualification.
+Check sentence lengths, consistent terms, explicit conditions, and clear actions.
+Return the requested output. Add a style report only when requested.
 
-Use the existing message format when a workflow defines one. Put these details in its appropriate fields.
-Include exact artifact paths or links. Keep assumptions separate from observed results.
+## Source
 
-## Check before delivery
-
-Compare a rewrite with its source. Confirm that all material facts and qualifications remain.
-Check that the reader can identify the subject, action, condition, and result where relevant.
-Remove repeated statements. Return the requested output without an extra style report unless the user requests one.
-
-## Scope and source
-
-These instructions adapt principles from [ASD-STE100](https://www.asd-ste100.org/) for everyday agent communication.
-They do not include its controlled dictionary or verify formal compliance.
-If formal compliance is required, use the official standard and check both its writing rules and dictionary.
-State which compliance checks remain unverified.
+The method comes from [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org/).
+This skill uses the 80% approach for everyday agent output. Formal compliance requires the official rules and dictionary.

@@ -1,4 +1,4 @@
 interface:
-  display_name: "ASD-STE100 Clear Communication"
-  short_description: "Clear explanations and precise agent handoffs"
-  default_prompt: "Use $asd-ste100 to explain this clearly and preserve all technical details and uncertainty."
+  display_name: "80% ASD-STE100"
+  short_description: "Write clear technical English with the STE method"
+  default_prompt: "Use $asd-ste100 to explain this about 80% of the way to ASD-STE100 Simplified Technical English."

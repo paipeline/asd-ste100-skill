@@ -1,13 +1,14 @@
 # ASD-STE100 Skill
 
-A small skill for clear AI explanations, instructions, and agent handoffs.
+A small skill that makes agents write **about 80% of the way to ASD-STE100 Simplified Technical English**.
 
 Inspired by [Andrej Karpathy's thoughts on making LLM output easier to understand](https://x.com/karpathy/status/2105819303471976479).
-He suggested asking models to explain things in ASD-STE100 Simplified Technical English.
+He suggested asking models to explain things in ASD-STE100, with "80% of the way" as a less rigid option.
 
 [ASD-STE100](https://www.asd-ste100.org/) comes from aircraft maintenance documentation.
-This skill adapts its principles to everyday agent communication: short sentences, consistent terms, and explicit actions.
-It aims to reduce ambiguity and reading effort while preserving technical detail and uncertainty.
+This skill uses its writing method: controlled words, consistent terms, simple verbs, short sentences, and one action per step.
+The 80% approach keeps this structure while allowing natural explanations and necessary technical vocabulary.
+It preserves technical detail and uncertainty. The percentage is a writing target, not a compliance score.
 
 ## Install
 
@@ -26,7 +27,7 @@ The skill itself needs no runtime dependencies or API keys.
 ## Use
 
 ```text
-Use the asd-ste100 skill to explain this code.
+Use the asd-ste100 skill. Explain this code about 80% of the way to ASD-STE100.
 ```
 
 In Codex, you can invoke it with `$asd-ste100`. Other examples:
