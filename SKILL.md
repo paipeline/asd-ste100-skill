@@ -1,12 +1,40 @@
 ---
 name: asd-ste100
-description: "Write explanations, instructions, and agent handoffs about 80% of the way to ASD-STE100 Simplified Technical English. Use when the user requests STE, 80% ASD-STE100, or clearer technical communication."
+description: "Explain complex information with 80% ASD-STE100 text and diagrams when they improve understanding. Use for STE explanations, visual explanations, process diagrams, or clear agent handoffs."
 ---
 
-# Write in 80% ASD-STE100
+# Explain clearly with 80% ASD-STE100 and diagrams
 
-Write about 80% of the way to ASD-STE100 Simplified Technical English.
-Use the STE writing method below for explanations, instructions, and communication between agents.
+Help the recipient understand the information. When relevant, make the next action clear.
+Choose the format that communicates the information most clearly.
+Write prose and diagram labels about 80% of the way to ASD-STE100 Simplified Technical English.
+
+## Choose the format
+
+Identify what the recipient needs to understand. Then choose the simplest useful format:
+
+| Information | Format |
+| --- | --- |
+| A fact, result, or short explanation | Prose |
+| Options, differences, or measurements | Table |
+| Steps, dependencies, or decisions | Flowchart |
+| Messages between actors over time | Sequence diagram |
+| States and transitions | State diagram |
+
+Add a diagram when it makes relationships easier to follow than prose alone.
+For Markdown and GitHub, use a Mermaid code block. Use the requested diagram format when specified.
+
+## Make the diagram useful
+
+1. State the question the diagram answers. Show the actors, steps, or states needed to answer it.
+2. Keep labels short. Use the same terms in the diagram and the prose.
+3. Label decision branches and relationships. Show prerequisites, exceptions, and failure paths that affect the result.
+4. Draw only relationships supported by the source. Mark proposed actions and unknown states clearly.
+5. Add a brief text explanation of the diagram's main point and any important limits.
+6. Check every arrow and branch against the source. Render the diagram when a renderer is available and inspect the result.
+
+Keep diagrams small enough to scan. Split different questions into separate diagrams when needed.
+If the output cannot display diagrams, use a text outline that preserves the same relationships.
 
 ## Use the STE writing method
 
@@ -42,9 +70,11 @@ Use the workflow's existing message format. Distinguish observations from assump
 
 Compare the output with the source. Restore any missing fact or qualification.
 Check sentence lengths, consistent terms, explicit conditions, and clear actions.
+Check that the chosen format makes the main point easier to find.
 Return the requested output. Add a style report only when requested.
 
 ## Source
 
-The method comes from [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org/).
-This skill uses the 80% approach for everyday agent output. Formal compliance requires the official rules and dictionary.
+The writing method comes from [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org/).
+The diagram guidance is this skill's addition to the STE writing method.
+Formal STE compliance requires the official rules and dictionary.

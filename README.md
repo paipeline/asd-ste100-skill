@@ -1,6 +1,7 @@
 # ASD-STE100 Skill
 
-A small skill that makes agents write **about 80% of the way to ASD-STE100 Simplified Technical English**.
+A small skill that helps people and agents understand complex information.
+It combines **80% ASD-STE100 writing** with **diagrams when they make the information clearer**.
 
 Inspired by [Andrej Karpathy's thoughts on making LLM output easier to understand](https://x.com/karpathy/status/2105819303471976479).
 He suggested asking models to explain things in ASD-STE100, with "80% of the way" as a less rigid option.
@@ -9,6 +10,7 @@ He suggested asking models to explain things in ASD-STE100, with "80% of the way
 This skill uses its writing method: controlled words, consistent terms, simple verbs, short sentences, and one action per step.
 The 80% approach keeps this structure while allowing natural explanations and necessary technical vocabulary.
 It preserves technical detail and uncertainty. The percentage is a writing target, not a compliance score.
+For processes, decisions, and relationships, the skill can also draw a diagram with a short explanation.
 
 ## Before and after
 
@@ -52,6 +54,28 @@ The rewrite separates facts, uncertainty, and next actions. It keeps the same co
 Word counts use whitespace-separated words and count each code identifier as one word. List markers are excluded.
 This example shows a change in writing structure; it does not measure reading speed.
 
+**Add a diagram to show the required checks**
+
+```mermaid
+flowchart LR
+    accTitle: Required checks before production deployment
+    accDescr: The next agent must make REDIS_URL available, run the integration suite, and run the staging smoke test only if the integration suite passes. A failed or unverified check keeps production deployment blocked.
+    env["Make REDIS_URL available"] --> integration{"Run integration suite.<br/>Did it pass?"}
+    integration -->|Yes| smoke{"Run staging smoke test.<br/>Did it pass?"}
+    integration -->|No or unknown| blocked["Keep production deployment blocked"]
+    smoke -->|No or unknown| blocked
+    smoke -->|Yes| passed["Required checks passed"]
+```
+
+This diagram shows the next agent's required checks. Both must pass before production deployment.
+It describes the check sequence, not the current results. Other deployment requirements are outside this diagram's scope.
+
+## Choose the clearest format
+
+Use short prose for a simple answer, a table for comparisons, or a diagram for processes and relationships.
+The goal is to make the information easier to understand and act on.
+The diagram guidance is an addition to the STE writing method.
+
 ## Install
 
 With [Skills CLI](https://github.com/vercel-labs/skills) (requires Node.js and Git):
@@ -76,8 +100,11 @@ In Codex, you can invoke it with `$asd-ste100`. Other examples:
 
 - "Rewrite this status update with the asd-ste100 skill."
 - "Use asd-ste100 to prepare a handoff for the next agent."
+- "Use asd-ste100 to explain this workflow with a diagram and short text."
+- "Use asd-ste100 to show the messages between these agents in a sequence diagram."
 
-The skill keeps exact identifiers, conditions, and uncertainty. Its instructions are in [SKILL.md](SKILL.md).
+The skill uses Mermaid for diagrams in Markdown and GitHub. It also respects a requested diagram format.
+It keeps exact identifiers, conditions, and uncertainty. Its instructions are in [SKILL.md](SKILL.md).
 
 ## Contribute
 

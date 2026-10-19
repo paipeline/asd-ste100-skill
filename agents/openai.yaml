@@ -1,4 +1,4 @@
 interface:
-  display_name: "80% ASD-STE100"
-  short_description: "Write clear technical English with the STE method"
-  default_prompt: "Use $asd-ste100 to explain this about 80% of the way to ASD-STE100 Simplified Technical English."
+  display_name: "80% ASD-STE100 + Diagrams"
+  short_description: "Explain clearly with STE text and useful diagrams"
+  default_prompt: "Use $asd-ste100 to explain this with 80% ASD-STE100 text and a diagram when it improves understanding."
