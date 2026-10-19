@@ -1,0 +1,4 @@
+interface:
+  display_name: "ASD-STE100 Clear Communication"
+  short_description: "Clear explanations and precise agent handoffs"
+  default_prompt: "Use $asd-ste100 to explain this clearly and preserve all technical details and uncertainty."
